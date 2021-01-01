@@ -60,8 +60,8 @@
                     <span id="first_name_error" class="text-danger"></span>
                     <br />
                     <label>Masukan Jurusan</label>
-                    <input type="text" name="last_name" id="last_name" class="form-control" />
-                    <span id="last_name_error" class="text-danger"></span>
+                    <input type="text" name="jurusan" id="jurusan" class="form-control" />
+                    <span id="jurusan_error" class="text-danger"></span>
                     <br />
                 </div>
                 <div class="modal-footer">
@@ -124,7 +124,7 @@ $(document).ready(function(){
                 if(data.error)
                 {
                     $('#first_name_error').html(data.first_name_error);
-                    $('#last_name_error').html(data.last_name_error);
+                    $('#jurusan_error').html(data.jurusan_error);
                 }
             }
         })
@@ -141,7 +141,7 @@ $(document).ready(function(){
             {
                 $('#userModal').modal('show');
                 $('#first_name').val(data.first_name);
-                $('#last_name').val(data.last_name);
+                $('#jurusan').val(data.jurusan);
                 $('.modal-title').text('Edit User');
                 $('#user_id').val(user_id);
                 $('#action').val('Edit');

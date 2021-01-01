@@ -47,7 +47,7 @@ class Test_api extends CI_Controller {
 
 				$form_data = array(
 					'first_name'		=>	$this->input->post('first_name'),
-					'last_name'			=>	$this->input->post('last_name'),
+					'jurusan'			=>	$this->input->post('jurusan'),
 					'id'				=>	$this->input->post('user_id')
 				);
 
@@ -64,11 +64,6 @@ class Test_api extends CI_Controller {
 				curl_close($client);
 
 				echo $response;
-
-
-
-
-
 
 
 			}
@@ -95,11 +90,6 @@ class Test_api extends CI_Controller {
 
 				echo $response;
 
-
-
-
-
-
 			}
 
 			if($data_action == "Insert")
@@ -109,7 +99,7 @@ class Test_api extends CI_Controller {
 
 				$form_data = array(
 					'first_name'		=>	$this->input->post('first_name'),
-					'last_name'			=>	$this->input->post('last_name')
+					'jurusan'			=>	$this->input->post('jurusan')
 				);
 
 				$client = curl_init($api_url);
@@ -156,7 +146,7 @@ class Test_api extends CI_Controller {
 						$output .= '
 						<tr>
 							<td>'.$row->first_name.'</td>
-							<td>'.$row->last_name.'</td>
+							<td>'.$row->jurusan.'</td>
 							<td><butto type="button" name="edit" class="btn btn-warning btn-xs edit" id="'.$row->id.'">Edit</button></td>
 							<td><button type="button" name="delete" class="btn btn-danger btn-xs delete" id="'.$row->id.'">Delete</button></td>
 						</tr>

@@ -19,12 +19,12 @@ class Api extends CI_Controller {
 	function insert()
 	{
 		$this->form_validation->set_rules('first_name', 'First Name', 'required');
-		$this->form_validation->set_rules('last_name', 'Last Name', 'required');
+		$this->form_validation->set_rules('jurusan', 'Jurusan Mhs', 'required');
 		if($this->form_validation->run())
 		{
 			$data = array(
 				'first_name'	=>	$this->input->post('first_name'),
-				'last_name'		=>	$this->input->post('last_name')
+				'jurusan'		=>	$this->input->post('jurusan')
 			);
 
 			$this->api_model->insert_api($data);
@@ -38,7 +38,7 @@ class Api extends CI_Controller {
 			$array = array(
 				'error'					=>	true,
 				'first_name_error'		=>	form_error('first_name'),
-				'last_name_error'		=>	form_error('last_name')
+				'jurusan_error'		=>	form_error('jurusan')
 			);
 		}
 		echo json_encode($array);
@@ -53,7 +53,7 @@ class Api extends CI_Controller {
 			foreach($data as $row)
 			{
 				$output['first_name'] = $row['first_name'];
-				$output['last_name'] = $row['last_name'];
+				$output['jurusan'] = $row['jurusan'];
 			}
 			echo json_encode($output);
 		}
@@ -63,12 +63,12 @@ class Api extends CI_Controller {
 	{
 		$this->form_validation->set_rules('first_name', 'First Name', 'required');
 
-		$this->form_validation->set_rules('last_name', 'Last Name', 'required');
+		$this->form_validation->set_rules('jurusan', 'Jurusan Mhs', 'required');
 		if($this->form_validation->run())
 		{	
 			$data = array(
 				'first_name'		=>	$this->input->post('first_name'),
-				'last_name'			=>	$this->input->post('last_name')
+				'jurusan'			=>	$this->input->post('jurusan')
 			);
 
 			$this->api_model->update_api($this->input->post('id'), $data);
@@ -82,7 +82,7 @@ class Api extends CI_Controller {
 			$array = array(
 				'error'				=>	ture,
 				'first_name_error'	=>	form_error('first_name'),
-				'last_name_error'	=>	form_error('last_name')
+				'jurusan_error'	=>	form_error('jurusan')
 			);
 		}
 		echo json_encode($array);
